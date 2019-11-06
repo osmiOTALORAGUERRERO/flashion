@@ -1,6 +1,6 @@
-# PetFriend
+# Flashion
 
-This project is a system for the donation and sale of pets, where we want the animals not to walk in the street and have their own owner, so in the case of donations, applicants must meet minimum requirements.
+This project is an application to provide an online beauty salon service, in which different beauty salons can offer services from the application, and that can be offered at home, also does not include only beauty salons, but also integrates independent workers, in this way customers can request aesthetic services from the comfort of their home.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.15.
 
 ## Installation
