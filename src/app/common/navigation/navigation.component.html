@@ -1,0 +1,65 @@
+<div *ngIf="auth.user | async; then authenticated else guest"></div>
+<ng-template #authenticated>
+<mat-toolbar color="primary">
+	<mat-toolbar-row *ngIf="auth.user | async as user">
+		<a
+		   *ngIf="user.role === 'customer'"
+			routerLinkActive="active"
+			routerLink="/orders"
+			RouterLinkActiveOptions="{exact:true}"
+			>
+		 	Pedidos 
+		</a>
+		<a
+		   *ngIf="user.role === 'admin' || user.role === 'editor'"
+			routerLinkActive="active"
+			routerLink="/admins"
+			RouterLinkActiveOptions="{exact:true}"
+			>
+		 	Administracion
+		</a>
+		<a
+			routerLinkActive="active"
+			routerLink="/cart"
+			RouterLinkActiveOptions="{exact:true}"
+			>
+		 	Carrito
+		</a>
+		<a
+		   (click)="auth.signOut()"
+			>
+		 	Salir
+		</a>
+
+	</mat-toolbar-row>
+</mat-toolbar> </ng-template>
+<ng-template #guest>
+	<mat-toolbar color="primary">
+	<mat-toolbar-row >
+		<a
+			routerLinkActive="active"
+			routerLink="/shop"
+			RouterLinkActiveOptions="{exact:true}"
+		>
+		 	Tienda 
+		</a>
+		<a
+			routerLinkActive="active"
+			routerLink="/login"
+			RouterLinkActiveOptions="{exact:true}"
+			>
+		 	Login
+		</a>
+		<a
+			routerLinkActive="active"
+			routerLink="/register"
+			RouterLinkActiveOptions="{exact:true}"
+			>
+		 	Registro
+		</a>
+
+	</mat-toolbar-row>
+</mat-toolbar>
+</ng-template>
+
+
